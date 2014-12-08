@@ -13,7 +13,10 @@
                 <?php endforeach;  ?>
                 <?php if (!isUserLoggedIn()) : ?>
                     <li><a href="?action=registration">Enregistrement</a></li>
-                <?php endif; ?>  
+                <?php endif; ?> 
+                <?php if (!isUserAdminIn()) : ?>
+                   <li><a href="?action=admin">Admin</a></li>
+                <?php endif; ?> 
             </ul>
                 <div id="navbar" class="navbar-collapse collapse">                
                     <ul class="nav navbar-nav navbar-right">

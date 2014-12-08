@@ -14,7 +14,7 @@
                 <?php if (!isUserLoggedIn()) : ?>
                     <li><a href="?action=registration">Enregistrement</a></li>
                 <?php endif; ?> 
-                <?php if (!isUserAdminIn()) : ?>
+                <?php if (isUserAdminIn()) : ?>
                    <li><a href="?action=admin">Admin</a></li>
                 <?php endif; ?> 
             </ul>

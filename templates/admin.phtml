@@ -1,0 +1,22 @@
+<h1>Ajout d'un prduit</h1>
+<br/>
+<form action="?action=admin&id=01" method="POST">
+    Nom: <input type="text" name="nom" value="" /> <br/>
+    Description:<textarea name="description" rows="10" cols="120"></textarea><br/>
+    Image: <input type="text" name="image" value="" /><br/>
+    Quantite: <input type="text" name="quantite" value="" /><br/>
+    Prix :<input type="number" name="prix" value="" /><br/>
+    Categorie: <select name="categorie"><br/>
+        <?php foreach ($categories as $categorie) : ?>
+            <option value='<?php echo htmlspecialchars($categorie->id); ?>'><?php echo htmlspecialchars($categorie->nom); ?></option>
+        <?php endforeach; ?>
+    </select><br/>
+    <input type="submit" value="envoyer" />
+</form>
+
+<h1>Ajout d'une catégorie</h1>
+<br/>
+<form action="?action=admin&id=02" method="POST">
+    Nom: <input type="text" name="nom" value="" />
+    <input type="submit" value="envoyer" />
+</form>

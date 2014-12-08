@@ -1,0 +1,19 @@
+<?php foreach ($categories as $categorie) : ?>
+<h1><?php echo htmlspecialchars($categorie->nom) ?></h1>
+<?php endforeach; ?>
+<br />
+<br />
+<br />
+<br />
+<br />
+<?php foreach ($produits as $produit) : ?>
+<div> nom : <a href='?action=produit&id=<?php echo htmlspecialchars($produit->id) ?>'><?php echo htmlspecialchars($produit->nom) ?></a></div>
+<div> image : <img src="<?php echo htmlspecialchars($produit->image) ?>" height="150" width="150"/></div>
+<div> Prix :  <?php echo htmlspecialchars($produit->prix) ?></div>
+<br />
+<?php endforeach; ?>
+
+
+
+
+

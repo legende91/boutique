@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Manageur</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="?action=defaut" >Accueil</a></li>
+                <li><a href="?action=contact">Contact</a></li>
+                <?php $menus = new categorie();
+                foreach($menus->findAll() as $menu): ?>
+                <li><a href='?action=categories&id=<?php echo htmlspecialchars($menu->id) ?>'><?php echo htmlspecialchars($menu->nom); ?></a>
+                <?php endforeach;  ?>
+                <?php if (!isUserLoggedIn()) : ?>
+                    <li><a href="?action=registration">Enregistrement</a></li>
+                <?php endif; ?>  
+            </ul>
+                <div id="navbar" class="navbar-collapse collapse">                
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mon Compte<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="?action=boutique">Compte</a></li>
+                                <?php if (isUserLoggedIn()) : ?>
+                                    <li><a href="?action=deco">Déconnexion</a></li>
+                                    <li><a href="?action=historique">Historique</a></li>
+                                <?php else: ?>
+
+                                    <form class="navbar-form navbar-right" role="form" method="POST" action="?action=login">
+                                        <div class="form-group">
+                                            <input id="Email" type="email" name="email" value="" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" placeholder="Password" name="password" class="form-control">
+                                        </div>
+                                        <button type="submit" name="Envoyer" value="Envoyer" class="btn btn-success">Login</button>
+                                    </form>
+
+                                <?php endif; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>

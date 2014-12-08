@@ -1,0 +1,18 @@
+<div class = "center-block" style = "width: 75%; color: gray;">
+     <?php if(isset($_COOKIE["Ok"])): ?>
+    <div  style = "width: 75%; color: greenyellow;"><?php echo $_COOKIE["Ok"];  ?></div>
+    <?php  endif ; ?>
+
+    <!-- Example row of columns -->
+    <div class="row">
+       <?php foreach ($produits as $produit) : ?>
+           <div class="col-lg-4">
+               <h2><?php echo htmlspecialchars($produit->nom); ?></h2>
+               <img src='<?php echo htmlspecialchars($produit->image); ?>'width="60" height="60" />
+               <a href="?action=produit&id=<?php echo htmlspecialchars($produit->id) ?>"><button>Voir</button></a>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+

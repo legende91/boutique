@@ -1,0 +1,10 @@
+<?php foreach ($produits as $produit) : ?>
+<h1><?php echo htmlspecialchars($produit->nom) ?></h1>
+<div> description :  <?php echo nl2br(htmlspecialchars($produit->description)) ?></div>
+<div> image : <img src="<?php echo htmlspecialchars($produit->image) ?>" height="150" width="150"/></div>
+<div> Date :  <?php echo htmlspecialchars($produit->date) ?></div>
+<div> Quantité :  <?php echo htmlspecialchars($produit->quantite) ?></div>
+<div> Prix :  <?php echo  htmlspecialchars($produit->prix) ?></div>
+<div><a href="#" >Acheter</a></div>
+<?php endforeach; ?>
+
